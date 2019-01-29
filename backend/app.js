@@ -11,7 +11,7 @@ const userRoutes = require('./routes/user');
 
 const app = express();
 
-mongoose.connect("mongodb+srv://KennethCarroll:eJvl4nnSyghgG0oP@cluster0-qzbmi.mongodb.net/test?retryWrites=true")
+mongoose.connect('mongodb://localhost:27017/MeanCourse')
   .then(() => {
     console.log('Successfully Connected to Database');
   })
