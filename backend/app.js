@@ -10,8 +10,7 @@ const userRoutes = require('./routes/user');
 
 
 const app = express();
-
-mongoose.connect('mongodb://localhost:27017/MeanCourse')
+mongoose.connect('mongodb+srv://KennethCarroll:' + process.env.MONGO_ATLAS_PW + '@cluster0-qzbmi.mongodb.net/test?retryWrites=true')
   .then(() => {
     console.log('Successfully Connected to Database');
   })
@@ -22,7 +21,7 @@ mongoose.connect('mongodb://localhost:27017/MeanCourse')
 app.use((bodyParser.json()));
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use("/images", express.static(path.join('backend/images')));
+app.use("/images", express.static(path.join('Images')));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");

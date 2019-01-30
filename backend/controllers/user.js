@@ -1,10 +1,10 @@
-const bcrypt = require('bcrypt');
+const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 const User = require('../models/user');
 
 exports.createUser = (req, res, next) => {
-  bcrypt.hash(req.body.password, 10)
+  bcryptjs.hash(req.body.password, 10)
     .then(hash => {
       const user = new User({
         email: req.body.email,
@@ -35,7 +35,7 @@ exports.loginUser = (req, res, next) => {
         });
       }
       fetchedUser = user;
-      return bcrypt.compare(req.body.password, user.password)
+      return bcryptjs.compare(req.body.password, user.password)
     })
     .then(result => {
       if(!result) {
