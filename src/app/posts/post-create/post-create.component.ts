@@ -33,7 +33,7 @@ export class PostCreateComponent implements OnInit {
 
 
   ngOnInit() {
-    this.authStatusSub= this.authService.getAuthStatusListener().subscribe(
+    this.authStatusSub = this.authService.getAuthStatusListener().subscribe(
       authStatus => {
         this.isLoading = false;
       });
@@ -102,7 +102,7 @@ export class PostCreateComponent implements OnInit {
     };
     reader.readAsDataURL(file);
   }
-  ngOnDestroy() {
+  NgOnDestroy() {
     this.authStatusSub.unsubscribe();
   }
 }
