@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://UdemyMeanCourse-env.ivafawjvgm.us-east-2.elasticbeanstalk.com/api'
+  apiUrl: 'localhost:3000/api'
 };
 
 /*
